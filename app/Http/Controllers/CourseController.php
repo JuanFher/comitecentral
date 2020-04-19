@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\College;
 use App\Course;
 use Illuminate\Http\Request;
 
@@ -16,9 +17,8 @@ class CourseController extends Controller
     {   
 
         $courses = Course::paginate(7);
-        // $college = Course::where('college_id')->
-        // return $courses;
-        return view('courses.index', compact('courses'));
+        $colleges = College::all()->pluck('name', 'id');
+        return view('courses.index', compact('courses', 'colleges'));
     }
 
     

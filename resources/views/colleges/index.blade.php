@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="page-header">
-        <h4 class="page-title">Listado de Cursos - {{ $colleges->implode('name', ', ') }} </h4>
+        <h4 class="page-title">Listado de Cursos - Perez Pallarez</h4>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
             <li class="breadcrumb-item active" aria-current="page">Lista de Cursos</li>
@@ -57,13 +57,12 @@
                                 <td>{{ $course->name }}</td>
                                 <td>{{ $course->teacher_name }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#modal_show{{$course->id}}"><i class="fa fa-info-circle"></i> Mostrar</button>
                                     <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal_edit{{$course->id}}"><i class="fa fa-edit"></i> Editar </button>
                                     <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal_delete{{$course->id}}"><i class="fa fa-trash"></i> Eliminar </button>
                                 </td>
                                 <td>
-                                   
-                                    <a href="#" type="button" class="btn btn-sm btn-secondary"><i class="fa fa-info-circle"></i> Mostrar Alumnos</a>
+                                    
+                                    <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#modal_show{{$course->id}}"><i class="fa fa-info-circle"></i> Mostrar</button>
                                 </td>
                             </tr>
                             @include('courses.modals.modal_create')

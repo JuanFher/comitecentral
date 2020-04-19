@@ -16,7 +16,7 @@
                 <div class="app-content  my-3 my-md-5">
                     <div class="side-app">
                         @yield('bradcrumbs')
-
+                        @include('layouts.includes.flash-message')
                         @yield('content')
                     </div>
                     <!--footer-->

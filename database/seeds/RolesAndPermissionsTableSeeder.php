@@ -81,10 +81,10 @@ class RolesAndPermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'create-expense']);
 
 
+       
         // this can be done as separate statements
-        $role = Role::create(['name' => 'superadmin']);// This role is for a superadmin
-        $role->givePermissionTo(Permission::all());
-
+        $role = Role::create(['name' => 'representant']);// This role is for a president of courses
+        $role->givePermissionTo('index-reports');
         
         // this can be done as separate statements
         $role = Role::create(['name' => 'admin']);// This role is for a Admin of courses
@@ -126,9 +126,11 @@ class RolesAndPermissionsTableSeeder extends Seeder
         $role->givePermissionTo('read-expense');
 
 
-        // this can be done as separate statements
-        $role = Role::create(['name' => 'representant']);// This role is for a president of courses
-        $role->givePermissionTo('index-reports');
+       
+
+         // this can be done as separate statements
+        $role = Role::create(['name' => 'superadmin']);// This role is for a superadmin
+        $role->givePermissionTo(Permission::all());
 
 
         

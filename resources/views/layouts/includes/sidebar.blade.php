@@ -33,7 +33,7 @@
         <li class="slide">
             <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-users"></i><span class="side-menu__label">Usuarios</span><i class="angle fa fa-angle-right"></i></a>
             <ul class="slide-menu">
-                {{-- <li><a class="slide-item" href="{{ route('user.index')}}">Usuarios</a></li> --}}
+                <li><a class="slide-item" href="{{ route('users.index')}}">Usuarios</a></li>
                 {{-- <li><a class="slide-item" href="{{ route('patient.index')}}">Roles</a></li>
                 <li><a class="slide-item" href="{{ route('patient.index')}}">Permisos</a></li> --}}
             </ul>
