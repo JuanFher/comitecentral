@@ -68,17 +68,24 @@ class RolesAndPermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'read-treasurer']);
         Permission::create(['name' => 'create-treasurer']);
 
-        // Permissions for account
-        Permission::create(['name' => 'index-account']);
-        Permission::create(['name' => 'update-account']);
-        Permission::create(['name' => 'delete-account']);
-        Permission::create(['name' => 'read-account']);
-        Permission::create(['name' => 'create-account']);
+        // Permissions for incomes and exprenses
+        Permission::create(['name' => 'index-income']);
+        Permission::create(['name' => 'update-income']);
+        Permission::create(['name' => 'delete-income']);
+        Permission::create(['name' => 'read-income']);
+        Permission::create(['name' => 'create-income']);
+        Permission::create(['name' => 'index-expense']);
+        Permission::create(['name' => 'update-expense']);
+        Permission::create(['name' => 'delete-expense']);
+        Permission::create(['name' => 'read-expense']);
+        Permission::create(['name' => 'create-expense']);
+
 
         // this can be done as separate statements
-        $role = Role::create(['name' => 'representant']);// This role is for a president of courses
-        $role->givePermissionTo('index-reports');
+        $role = Role::create(['name' => 'superadmin']);// This role is for a superadmin
+        $role->givePermissionTo(Permission::all());
 
+        
         // this can be done as separate statements
         $role = Role::create(['name' => 'admin']);// This role is for a Admin of courses
         $role->givePermissionTo('index-reports');
@@ -107,16 +114,24 @@ class RolesAndPermissionsTableSeeder extends Seeder
         // this can be done as separate statements
         $role = Role::create(['name' => 'treasurer']);// This role is for a trasure of comite
         $role->givePermissionTo('index-reports');
-        $role->givePermissionTo('index-account');
-        $role->givePermissionTo('create-account');
-        $role->givePermissionTo('update-account');
-        $role->givePermissionTo('delete-account');
-        $role->givePermissionTo('read-account');
+        $role->givePermissionTo('index-income');
+        $role->givePermissionTo('create-income');
+        $role->givePermissionTo('update-income');
+        $role->givePermissionTo('delete-income');
+        $role->givePermissionTo('read-income');
+        $role->givePermissionTo('index-expense');
+        $role->givePermissionTo('create-expense');
+        $role->givePermissionTo('update-expense');
+        $role->givePermissionTo('delete-expense');
+        $role->givePermissionTo('read-expense');
 
 
         // this can be done as separate statements
-        $role = Role::create(['name' => 'superadmin']);// This role is for a superadmin
-        $role->givePermissionTo(Permission::all());
+        $role = Role::create(['name' => 'representant']);// This role is for a president of courses
+        $role->givePermissionTo('index-reports');
+
+
+        
 
     }
 }

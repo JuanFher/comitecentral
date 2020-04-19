@@ -1,10 +1,8 @@
 <?php
 
-
-use App\SchoolYear;
 use Illuminate\Database\Seeder;
 
-class SchoolYearSeeder extends Seeder
+class IncomeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,8 +11,6 @@ class SchoolYearSeeder extends Seeder
      */
     public function run()
     {
-        $schoolyear = SchoolYear::create([
-            'name' => '2019-2020'
-        ]);
+        //
     }
 }
