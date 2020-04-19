@@ -20,3 +20,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('colleges', 'CollegeController')->only(['index', 'store', 'update', 'destroy']);
+Route::resource('courses', 'CourseController')->only(['index', 'store', 'update', 'destroy']);
+Route::resource('students', 'StudentController')->only(['index', 'store', 'update', 'destroy']);
+Route::resource('treasurers', 'TreasurerController')->only(['index', 'store', 'update', 'destroy']);
+Route::resource('roles', 'RoleController')->only(['index', 'store', 'update', 'destroy']);
+Route::resource('permissions', 'PermissionController')->only(['index', 'store', 'update', 'destroy']);
+Route::resource('users', 'UserController')->only(['index', 'store', 'update', 'destroy']);
+Route::resource('incomes', 'IncomeController');
+Route::resource('expenses', 'ExpenseController');
+
